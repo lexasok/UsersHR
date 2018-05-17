@@ -19,6 +19,5 @@ public class User {
         Set a = new HashSet<Integer>();
         a.add(1212);
         User alex = new User("Alex", "123", 18, a);
-
     }
 }
