@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,6 +14,7 @@ public class Solution {
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         String regEx = "[a-zA-Z0-9_]+@gmail\\.com";
         Pattern pattern = Pattern.compile(regEx);
+        List<String> list = new ArrayList<String>();
 
 
         for (int i = 0; i < n; i++) {
@@ -20,10 +24,18 @@ public class Solution {
 
             Matcher matcher = pattern.matcher(emailId);
             if (matcher.matches()) {
-                System.out.println(firstName);
+                list.add(firstName);
             }
         }
 
         scan.close();
+
+        //sorting data
+        Collections.sort(list);
+
+        //data output
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
     }
 }
