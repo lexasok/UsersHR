@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Set;
 
 public class User {
@@ -15,6 +16,9 @@ public class User {
     }
 
     public static void main(String[] args) {
+        Set a = new HashSet<Integer>();
+        a.add(1212);
+        User alex = new User("Alex", "123", 18, a);
 
     }
 }
